@@ -22,7 +22,7 @@ function parseCamelotKey(key: string): { number: CamelotNumber; mode: CamelotMod
 }
 
 function wrapNumber(number: number): CamelotNumber {
-  return ((number - 1 + WHEEL_SIZE) % WHEEL_SIZE) + 1 as CamelotNumber
+  return (((number - 1 + WHEEL_SIZE) % WHEEL_SIZE) + 1) as CamelotNumber
 }
 
 /**
