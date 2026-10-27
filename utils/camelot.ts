@@ -8,7 +8,10 @@ export type CamelotKey = `${CamelotNumber}${CamelotMode}`
 const CAMELOT_PATTERN = /^(1[0-2]|[1-9])([AB])$/
 const WHEEL_SIZE = 12
 
-function parseCamelotKey(key: string): { number: CamelotNumber; mode: CamelotMode } {
+function parseCamelotKey(key: string): {
+  number: CamelotNumber
+  mode: CamelotMode
+} {
   const match = CAMELOT_PATTERN.exec(key.trim().toUpperCase())
 
   if (!match) {
@@ -17,7 +20,7 @@ function parseCamelotKey(key: string): { number: CamelotNumber; mode: CamelotMod
 
   return {
     number: Number(match[1]) as CamelotNumber,
-    mode: match[2] as CamelotMode,
+    mode: match[2] as CamelotMode
   }
 }
 
@@ -45,6 +48,6 @@ export function getCompatibleKeys(key: string): CamelotKey[] {
     `${number}${mode}`,
     `${wrapNumber(number - 1)}${mode}`,
     `${wrapNumber(number + 1)}${mode}`,
-    `${number}${relativeMode}`,
+    `${number}${relativeMode}`
   ]
 }
