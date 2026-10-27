@@ -1,0 +1,6 @@
+# Generated or managed by tooling, not by hand
+.claude
+.nuxt
+.output
+coverage
+pnpm-lock.yaml
